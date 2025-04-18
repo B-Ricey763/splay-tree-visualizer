@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logo from "../logo.svg";
-import NetworkShowcase from "@/components/visx-network-showcase";
+import { SplayTreeVisualizer } from "@/components/splay-tree-vis";
 
 export const Route = createFileRoute("/")({
 	component: App,
@@ -8,8 +7,8 @@ export const Route = createFileRoute("/")({
 
 function App() {
 	return (
-		<div className="text-center">
-			<NetworkShowcase width={1000} height={1000} />
+		<div>
+			<SplayTreeVisualizer />
 		</div>
 	);
 }
