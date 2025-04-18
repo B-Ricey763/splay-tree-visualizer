@@ -1,0 +1,15 @@
+{
+  "framework": "react",
+  "projectName": "splay-tree-visualizer",
+  "typescript": true,
+  "tailwind": true,
+  "packageManager": "pnpm",
+  "toolchain": "none",
+  "mode": "file-router",
+  "git": true,
+  "variableValues": {},
+  "version": 1,
+  "existingAddOns": [
+    "shadcn"
+  ]
+}
