@@ -1,4 +1,10 @@
-Welcome to your new TanStack app!
+# Features
+
+Visualize splay trees!
+
+The interactive component was built using Typescript and React, with Shadcn/ui for the beautiful components, Tanstack Router for routing (of which there is only a home page), and framer-motion for the smooth animations.
+
+The site is hosted via Github pages for free, easy access on the web. The splay tree code uses an alternate implementation than the original paper, using a left and right node pointer instead of a child-sibling pointer approach. During every operation, the current tree state is pushed to an animation stack that saves that "frame" of the tree's state, so it can be animated once the operation completes.
 
 # Getting Started
 
@@ -15,14 +21,6 @@ To build this application for production:
 
 ```bash
 pnpm build
-```
-
-## Testing
-
-This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
-
-```bash
-pnpm test
 ```
 
 ## Styling

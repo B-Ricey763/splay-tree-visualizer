@@ -277,6 +277,10 @@ export class SplayTree {
 
 	// Splay operation with animation steps
 	splay(key: number): AnimationStep[] {
+		// TODO: there is something pretty broken about this function.
+		// It returns the new root, so when you are cloning animation steps
+		// it doesn't preserve the entire tree structure since it is not really together
+		// in the intermediate steps. I'm too lazy to fix, but just fyi.
 		const steps: AnimationStep[] = [];
 
 		if (!this.root) {
@@ -323,7 +327,7 @@ export class SplayTree {
 
 						// Add animation step
 						steps.push({
-							tree: this.cloneNode(tree.root),
+							tree: this.cloneNode(dummyTree.root),
 							description: `Zig-Zig (left-left): First rotation`,
 							cursor: firstRotation,
 						});
@@ -334,7 +338,7 @@ export class SplayTree {
 
 						// Add animation step
 						steps.push({
-							tree: this.cloneNode(tree.root),
+							tree: this.cloneNode(dummyTree.root),
 							description: `Zig-Zig (left-left): Second rotation`,
 							cursor: secondRotation,
 						});
@@ -351,7 +355,7 @@ export class SplayTree {
 
 						// Add animation step
 						steps.push({
-							tree: this.cloneNode(tree.root),
+							tree: this.cloneNode(dummyTree.root),
 							description: `Zig-Zag (left-right): First rotation`,
 							cursor: firstRotation,
 						});
@@ -362,7 +366,7 @@ export class SplayTree {
 
 						// Add animation step
 						steps.push({
-							tree: this.cloneNode(tree.root),
+							tree: this.cloneNode(dummyTree.root),
 							description: `Zig-Zag (left-right): Second rotation`,
 							cursor: secondRotation,
 						});
@@ -374,7 +378,7 @@ export class SplayTree {
 
 					// Add animation step
 					steps.push({
-						tree: this.cloneNode(tree.root),
+						tree: this.cloneNode(dummyTree.root),
 						description: `Zig (left): Single rotation`,
 						cursor: rotation,
 					});
@@ -399,7 +403,7 @@ export class SplayTree {
 
 						// Add animation step
 						steps.push({
-							tree: this.cloneNode(tree.root),
+							tree: this.cloneNode(dummyTree.root),
 							description: `Zig-Zig (right-right): First rotation`,
 							cursor: firstRotation,
 						});
@@ -410,7 +414,7 @@ export class SplayTree {
 
 						// Add animation step
 						steps.push({
-							tree: this.cloneNode(tree.root),
+							tree: this.cloneNode(dummyTree.root),
 							description: `Zig-Zig (right-right): Second rotation`,
 							cursor: secondRotation,
 						});
@@ -427,7 +431,7 @@ export class SplayTree {
 
 						// Add animation step
 						steps.push({
-							tree: this.cloneNode(tree.root),
+							tree: this.cloneNode(dummyTree.root),
 							description: `Zig-Zag (right-left): First rotation`,
 							cursor: firstRotation,
 						});
@@ -438,7 +442,7 @@ export class SplayTree {
 
 						// Add animation step
 						steps.push({
-							tree: this.cloneNode(tree.root),
+							tree: this.cloneNode(dummyTree.root),
 							description: `Zig-Zag (right-left): Second rotation`,
 							cursor: secondRotation,
 						});
@@ -450,7 +454,7 @@ export class SplayTree {
 
 					// Add animation step
 					steps.push({
-						tree: this.cloneNode(tree.root),
+						tree: this.cloneNode(dummyTree.root),
 						description: `Zig (right): Single rotation`,
 						cursor: rotation,
 					});

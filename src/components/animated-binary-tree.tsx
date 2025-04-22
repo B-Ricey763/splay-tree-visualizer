@@ -12,21 +12,25 @@ const CIRCLE_WIDTH = 10;
 export const SvgNode = ({ node }: SvgNodeProps) => (
 	<g>
 		{node.left && (
-			<line
-				x1={node.x}
-				y1={node.y}
-				x2={node.left.x}
-				y2={node.left.y}
+			<motion.line
+				animate={{
+					x1: node.x,
+					y1: node.y,
+					x2: node.left.x,
+					y2: node.left.y,
+				}}
 				stroke={LINE_COLOR}
 				strokeWidth="1"
 			/>
 		)}
 		{node.right && (
-			<line
-				x1={node.x}
-				y1={node.y}
-				x2={node.right.x}
-				y2={node.right.y}
+			<motion.line
+				animate={{
+					x1: node.x,
+					y1: node.y,
+					x2: node.right.x,
+					y2: node.right.y,
+				}}
 				stroke={LINE_COLOR}
 				strokeWidth="1"
 			/>
